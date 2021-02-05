@@ -5,11 +5,22 @@
                 <h3 class="heading mt-5 text-center">Get some trendy <strong>GiPhY</strong>.😄</h3>
                 <div class="d-flex justify-content-center px-5">
                     <div class="search"> 
-                        <input type="text" class="search-input" placeholder="Search..." name="" #searchText 
-                        (keyup.enter)="search(searchText.value)"><a class="search-icon"><i class="fa fa-search"></i> </a>
+                        <input type="text" class="search-input" placeholder="Search..." name="" #giphy 
+                        (keyup.enter)="searchGifs(giphy.value)"><a class="search-icon"><i class="fa fa-search"></i> </a>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <hr class="mt-2 mb-5">
+    <div class="row text-center text-lg-left">
+        <div class="col-lg-3 col-md-4 col-6 item" *ngFor='let giphy of giphys'>
+            <a href="#" class="d-block mb-4 h-100">
+                <img [src]="giphy.images.original.url" alt="Giphy">
+            </a>
         </div>
     </div>
 </div>
