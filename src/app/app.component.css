@@ -1,0 +1,25 @@
+.navbar {
+    height: 70px;
+    background-color: #2d3e4e;
+}
+
+.navbar-brand.h1 {
+    color: #e8eceb;
+    font-size: 2em;
+}
+
+.navbar-brand.h1:hover {
+    color: #e8eceb;
+    text-decoration: underline;
+}
+
+.navbar-nav {
+    flex-direction: row;
+    
+}
+
+.nav-item a {
+    color: #e8eceb;
+    margin: 10px;
+    font-size: 20px;
+}

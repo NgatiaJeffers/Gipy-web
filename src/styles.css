@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic");
+@import "~bootstrap/dist/css/bootstrap.css";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+*, *:before, *:after { 
+    box-sizing: border-box !important; 
+} 
+
+
+body {
+    margin: 0;
+    font-family: "Poppins", Gotham Rounded, monospace;
+}
+
+
+.item {
+    width: 100%;
+    display: inline-block;
+    padding: .25rem;
+}
+
+
+img {
+    width: 100%;
+}

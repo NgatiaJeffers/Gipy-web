@@ -1,0 +1,8 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12 ap">
+            <app-viewer [imgUrl]="gif"></app-viewer>
+        </div>
+        <input type="button" value="loead more" class="btn btn-primary btn-block" *ngIf="!isLoading" (click)="getMore()">
+    </div>
+</div>
