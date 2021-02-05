@@ -8,30 +8,34 @@ import { GiphyService } from './../giphy.service';
 })
 export class TrendingComponent implements OnInit {
 
-  public gif: string; 
-  public result: any; 
-  public isLoading: boolean = true;
+  gifs: any [] = []; 
 
 
   constructor(private giphyService: GiphyService) { }
 
   ngOnInit(): void {
-    this.getTrendingGifs();
+        this.giphyService.getTrendingGifs().subscribe((response: any)=> {
+      this.gifs = response.data;
+      console.log(this.gifs)
+    }, (err) => 
+    console.log('Oops!', err),
+    () => console.log('Response', this.gifs)
+    )
   }
 
   private offset = 0;
   private perPage = 12;
   public results: any;
-  public gifs: Array<any> = [];
+  public isLoading = false; 
 
   getTrendingGifs() {
-    this.giphyService.getTrendingGifs().subscribe((data)=> {
-      this.result = data;
-      this.gifs = this.result.data.image_url;
-      this.isLoading = false;
+    this.giphyService.getTrendingGifs().subscribe((response: any)=> {
+      this.gifs = response.data;
+      console.log(this.gifs)
+      this.isLoading = false; 
     }, (err) => 
     console.log('Oops!', err),
-    () => console.log('Response', this.result)
+    () => console.log('Response', this.gifs)
     )
   }
 

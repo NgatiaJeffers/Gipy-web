@@ -20,7 +20,7 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  searchGifs() {
+  searchGifs(offset, limit, query) {
     this.giphyservice.searchGifs().subscribe((data) => {
       this.results = data;
       this.gifs = this.gifs.concat(this.results.data);
@@ -34,13 +34,13 @@ export class SearchComponent implements OnInit {
   search(query) {
     this.query = query;
     this.isLoading = true;
-    this.searchGifs();
+    this.searchGifs(this.offset, this.perPage, this.query);
   }
 
   getMore() {
     this.isLoading = true;
     this.offset = this.offset + this.perPage;
-    this.searchGifs();
+    this.searchGifs(this.offset, this.perPage, this.query);
   }
 
 }

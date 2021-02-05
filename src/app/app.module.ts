@@ -11,20 +11,18 @@ import { SearchComponent } from './search/search.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 import { GiphyService } from './giphy.service';
-import { ViewerComponent } from './viewer/viewer.component';
 @NgModule({
   declarations: [
     AppComponent,
     TrendingComponent,
     SearchComponent,
-    NotFoundComponent,
-    ViewerComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [GiphyService],
   bootstrap: [AppComponent]

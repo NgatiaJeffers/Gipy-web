@@ -7,7 +7,7 @@ import { GifClass } from './gifs-class/gif-class';
 })
 export class GiphyService {
 
-  gif: GifClass;
+  gifs: Array<any> = [];
 
   constructor(private http: HttpClient) { }
 
